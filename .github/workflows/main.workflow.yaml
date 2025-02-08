@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   build:
-    uses: x64nik/actions-templates/.github/workflows/dockerhub-build-push.yaml@main
+    uses: x64nik/action-templates/.github/workflows/dockerhub-build-push.yaml@main
     with:
       image_name: ${{ github.event.repository.name }}
     secrets:
