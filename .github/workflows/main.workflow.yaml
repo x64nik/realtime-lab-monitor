@@ -1,0 +1,14 @@
+name: Build and Push using Shared Workflow
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    uses: x64nik/actions-templates/docker/dockerhub-build-push.yaml@main
+    with:
+      image_name: ${{ github.event.repository.name }}
+    secrets:
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
